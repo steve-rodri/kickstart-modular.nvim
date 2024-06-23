@@ -73,8 +73,13 @@ return {
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
 
+      pcall(require('telescope').load_extension, 'media_files')
+      pcall(require('telescope').load_extension, 'emoji')
+      pcall(require('telescope').load_extension, 'dap')
+
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
+      vim.keymap.set('n', '<leader>f', builtin.git_files, { desc = '[F]ind File' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
@@ -85,6 +90,11 @@ return {
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>sm', builtin.find_files, { desc = '[S]earch [M]edia' })
+
+      vim.keymap.set('n', '<leader>sm', '<cmd>Telescope media_files<cr>', { desc = '[S]earch [M]edia' })
+      vim.keymap.set('n', '<leader>se', '<cmd>Telescope emoji<cr>', { desc = '[S]earch [E]moji' })
+      vim.keymap.set('n', '<leader>sD', '<cmd>Telescope dap<cr>', { desc = '[S]earch [D]ap' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -105,9 +115,9 @@ return {
       end, { desc = '[S]earch [/] in Open Files' })
 
       -- Shortcut for searching your Neovim configuration files
-      vim.keymap.set('n', '<leader>sn', function()
+      vim.keymap.set('n', '<leader>sc', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
-      end, { desc = '[S]earch [N]eovim files' })
+      end, { desc = '[S]earch [C]onfiguration files' })
     end,
   },
 }
