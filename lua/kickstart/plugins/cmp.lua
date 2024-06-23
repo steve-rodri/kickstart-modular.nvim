@@ -34,6 +34,8 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+
+      { 'Exafunction/codeium.nvim', opts = {} },
     },
     config = function()
       -- See `:help cmp`
@@ -41,6 +43,7 @@ return {
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
 
+      ---@diagnostic disable-next-line: redundant-parameter
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -105,6 +108,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'codeium' },
         },
       }
     end,
