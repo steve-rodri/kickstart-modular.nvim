@@ -10,8 +10,8 @@ vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = '[W]rite Buffer (Save Fi
 vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { desc = '[Q]uit' })
 vim.keymap.set('n', '<leader>Q', '<cmd>q!<cr>', { desc = 'Force [Q]uit' })
 
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '<leader>lk', vim.diagnostic.goto_prev, { desc = 'LSP: Go to previous Diagnostic message' })
+vim.keymap.set('n', '<leader>lj', vim.diagnostic.goto_next, { desc = 'LSP: Go to next Diagnostic message' })
 vim.keymap.set('n', '<leader>le', vim.diagnostic.open_float, { desc = 'LSP: Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>lq', vim.diagnostic.setloclist, { desc = 'LSP: Open diagnostic [Q]uickfix list' })
 

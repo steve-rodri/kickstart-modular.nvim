@@ -7,6 +7,7 @@ return {
     vim.opt.termguicolors = true
 
     vim.keymap.set('n', '<leader>c', '<cmd>bdelete<cr>', { desc = '[C]lose current buffer' })
+    vim.keymap.set('n', '<leader>C', '<cmd>bdelete!<cr>', { desc = 'Force [C]lose current buffer' })
 
     vim.keymap.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Previous buffer' })
     vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' })
