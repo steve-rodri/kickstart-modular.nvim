@@ -18,4 +18,13 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  desc = 'Set file type to Blade',
+  group = vim.api.nvim_create_augroup('set-filetype-blade', { clear = true }),
+  pattern = { '*.blade.php' },
+  callback = function()
+    vim.cmd 'setfiletype blade'
+  end,
+})
+
 -- vim: ts=2 sts=2 sw=2 et
