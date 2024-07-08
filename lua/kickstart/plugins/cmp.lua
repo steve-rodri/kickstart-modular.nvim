@@ -36,6 +36,7 @@ return {
       'hrsh7th/cmp-path',
 
       { 'Exafunction/codeium.nvim', opts = {} },
+      'kristijanhusak/vim-dadbod-completion',
     },
     config = function()
       -- See `:help cmp`
@@ -109,6 +110,7 @@ return {
           { name = 'luasnip' },
           { name = 'path' },
           { name = 'codeium' },
+          { name = 'vim-dadbod-completion' },
         },
       }
     end,
