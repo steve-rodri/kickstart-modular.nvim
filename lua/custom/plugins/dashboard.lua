@@ -31,12 +31,31 @@ return {
           },
           {
             icon = ' ',
+            icon_hl = 'Title',
+            desc = 'Search Text',
+            desc_hl = 'String',
+            key = 't',
+            key_format = ' %s', -- remove default surrounding `[]`
+            action = 'Telescope live_grep',
+          },
+          {
+            icon = ' ',
+            icon_hl = 'Title',
             desc = 'Search Dot-files',
+            desc_hl = 'String',
             key = 'd',
             key_format = ' %s', -- remove default surrounding `[]`
             action = 'Telescope find_files cwd=~/.dot-files',
           },
-          { icon = '󰊳 ', desc = 'Update', action = 'Lazy update', key = 'u' },
+          {
+            icon = '󰊳 ',
+            icon_hl = 'Title',
+            desc = 'Update',
+            desc_hl = 'String',
+            key = 'u',
+            key_format = ' %s', -- remove default surrounding `[]`
+            action = 'Lazy update',
+          },
         },
         shortcut = {
           { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
