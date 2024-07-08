@@ -124,21 +124,15 @@ return {
           },
         },
         ['eslint-lsp'] = {
-          on_attach = function(_, bufnr)
-            vim.api.nvim_create_autocmd('BufWritePre', {
-              buffer = bufnr,
-              command = 'EslintFixAll',
-            })
-          end,
+          -- on_attach = function(_, bufnr)
+          --   print 'eslint attached'
+          --   vim.api.nvim_create_autocmd('BufWritePre', {
+          --     buffer = bufnr,
+          --     command = 'EslintFixAll',
+          --   })
+          -- end,
           settings = {
-            enable = true,
             autoFixOnSave = true,
-            codeActionOnSave = {
-              mode = 'all',
-            },
-            format = {
-              enable = true,
-            },
           },
         },
       }
@@ -156,7 +150,7 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'eslint-lsp',
+        -- 'eslint-lsp',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
