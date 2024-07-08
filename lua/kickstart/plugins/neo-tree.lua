@@ -14,7 +14,11 @@ return {
     { '<leader>e', ':Neotree toggle<CR>', { desc = '[E]xplorer' } },
   },
   opts = {
+    window = {
+      width = 34,
+    },
     filesystem = {
+      follow_current_file = { enabled = true },
       window = {
         mappings = {
           ['<leader>e'] = 'close_window',
