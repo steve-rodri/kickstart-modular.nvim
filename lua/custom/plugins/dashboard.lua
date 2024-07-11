@@ -27,7 +27,7 @@ return {
             key = 'f',
             key_hl = 'Number',
             key_format = ' %s', -- remove default surrounding `[]`
-            action = 'Telescope find_files',
+            action = 'lua require"telescope.builtin".find_files({ hidden = true })',
           },
           {
             icon = ' ',
