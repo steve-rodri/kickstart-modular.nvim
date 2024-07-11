@@ -8,16 +8,6 @@ return {
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
         sql = { 'sqlfluff' },
-
-        -- javascript = { 'eslint_d' },
-        -- javascriptReact = { 'eslint_d' },
-        -- typescript = { 'eslint_d' },
-        -- typescriptReact = { 'eslint_d' },
-
-        javascript = { 'eslint' },
-        javascriptReact = { 'eslint' },
-        typescript = { 'eslint' },
-        typescriptReact = { 'eslint' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
