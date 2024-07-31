@@ -21,20 +21,30 @@ return {
       require('which-key').setup()
 
       -- Document existing key chains
-      require('which-key').register {
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>l'] = { name = '[L]sp', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
-        ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ebug', _ = 'which_key_ignore' },
-        ['<leader>e'] = { name = '[E]xplorer', _ = 'which_key_ignore' },
-        ['<leader>o'] = { name = '[O]pen', _ = 'which_key_ignore' },
-        ['<leader>x'] = { name = '[X] Trouble', _ = 'which_key_ignore' },
-        ['<leader>b'] = { name = '[B]uffers', _ = 'which_key_ignore' },
+      require('which-key').add {
+        { '<leader>b', group = '[B]uffers' },
+        { '<leader>b_', hidden = true },
+        { '<leader>d', group = '[D]ebug' },
+        { '<leader>d_', hidden = true },
+        { '<leader>e', group = '[E]xplorer' },
+        { '<leader>e_', hidden = true },
+        { '<leader>g', group = '[G]it' },
+        { '<leader>g_', hidden = true },
+        { '<leader>l', group = '[L]sp' },
+        { '<leader>l_', hidden = true },
+        { '<leader>o', group = '[O]pen' },
+        { '<leader>o_', hidden = true },
+        { '<leader>s', group = '[S]earch' },
+        { '<leader>s_', hidden = true },
+        { '<leader>t', group = '[T]oggle' },
+        { '<leader>t_', hidden = true },
+        { '<leader>x', group = '[X] Trouble' },
+        { '<leader>x_', hidden = true },
       }
+
       -- visual mode
-      require('which-key').register({
-        ['<leader>g'] = { '[G]it' },
+      require('which-key').add({
+        { '<leader>g', desc = '[G]it', mode = 'v' },
       }, { mode = 'v' })
     end,
   },
