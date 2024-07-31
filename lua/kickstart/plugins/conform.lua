@@ -1,3 +1,6 @@
+-- local tsjs = { 'biome', 'prettier', 'prettierd' }
+local tsjs = { 'prettier', 'prettierd' }
+
 return {
   { -- Autoformat
     'stevearc/conform.nvim',
@@ -24,15 +27,26 @@ return {
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
+
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { { 'prettierd', 'prettier' } },
-        javascriptreact = { { 'prettierd', 'prettier' } },
-        typescript = { { 'prettierd', 'prettier' } },
-        typescriptreact = { { 'prettierd', 'prettier' } },
-        json = { { 'prettierd', 'prettier' } },
-        markdown = { { 'prettierd', 'prettier' } },
+        javascript = { tsjs },
+        javascriptreact = { tsjs },
+        typescript = { tsjs },
+        typescriptreact = { tsjs },
+        json = { tsjs },
+        markdown = function()
+          -- local formatters = table.insert(tsjs, 1, 'markdownlint')
+          return { tsjs, 'mdslw' }
+        end,
+        yaml = function()
+          local formatters = table.insert(tsjs, 1, 'yamlfmt')
+          return { formatters }
+        end,
         sql = { 'sql-formatter' },
+        sh = { 'beautysh' },
+        zsh = { 'beautysh' },
+        ['*'] = { 'codespell' },
       },
     },
   },
