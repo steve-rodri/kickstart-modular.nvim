@@ -34,14 +34,33 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'onsails/lspkind.nvim',
 
       { 'Exafunction/codeium.nvim', opts = {} },
       'kristijanhusak/vim-dadbod-completion',
+
+      'supermaven-inc/supermaven-nvim',
+      opts = {
+        keymaps = {
+          accept_suggestion = '<C-y>',
+          clear_suggestion = '<C-]>',
+          accept_word = '<C-Y>',
+        },
+        ignore_filetypes = { cpp = true },
+        color = {
+          suggestion_color = '#eeeeee',
+          cterm = 244,
+        },
+        log_level = 'info', -- set to "off" to disable logging completely
+        disable_inline_completion = false, -- disables inline completion for use with cmp
+        disable_keymaps = false, -- disables built in keymaps for more manual control
+      },
     },
     config = function()
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
+      local lspkind = require 'lspkind'
       luasnip.config.setup {}
 
       ---@diagnostic disable-next-line: redundant-parameter
@@ -52,6 +71,13 @@ return {
           end,
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
+        formatting = {
+          format = lspkind.cmp_format {
+            mode = 'symbol',
+            max_width = 50,
+            symbol_map = { Supermaven = '' },
+          },
+        },
 
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
@@ -111,6 +137,7 @@ return {
           { name = 'path' },
           { name = 'codeium' },
           { name = 'vim-dadbod-completion' },
+          { name = 'supermaven' },
         },
       }
     end,
