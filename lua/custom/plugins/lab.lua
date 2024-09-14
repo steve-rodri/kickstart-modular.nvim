@@ -7,10 +7,3 @@ return {
     vim.keymap.set('n', '<leader>ol', '<cmd>Lab code run<cr>', { desc = '[O]pen [L]ab Code Runner' })
   end,
 }
-
--- wk.mappings["a"] = {
---   name = "Code Runner",
---   s = { "<cmd>Lab code stop<cr>" },
---   r = { "<cmd>Lab code run<cr>" },
---   p = { "<cmd>Lab code panel<cr>" },
--- }
