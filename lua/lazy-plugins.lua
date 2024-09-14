@@ -1,5 +1,7 @@
 -- [[ Configure and install plugins ]]
 
+local lazy_opts = require 'lazy-opts'
+
 require('lazy').setup({
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.cmp',
@@ -25,6 +27,7 @@ require('lazy').setup({
   require 'custom.plugins.cmdline',
   require 'custom.plugins.dadbod',
   require 'custom.plugins.dashboard',
+  require 'custom.plugins.harpoon',
   require 'custom.plugins.lab',
   -- require 'custom.plugins.lualine',
   require 'custom.plugins.neoscroll',
@@ -34,41 +37,7 @@ require('lazy').setup({
   require 'custom.plugins.typescript-tools',
   require 'custom.plugins.zoxide',
 
-  -- File Navigation and Management
-  -- 'thePrimeagen/harpoon',
-  'christoomey/vim-tmux-navigator',
-
-  -- Telescope Extensions
-  'xiyaowong/telescope-emoji.nvim',
-  'nvim-telescope/telescope-media-files.nvim',
-  'nvim-telescope/telescope-dap.nvim',
-
-  -- Code Editing and Refactoring
-  'christoomey/vim-sort-motion',
-  'tpope/vim-repeat',
-
-  -- PHP Development
-  'jwalton512/vim-blade',
-}, {
-  ui = {
-    -- If you are using a Nerd Font: set icons to an empty table which will use the
-    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
-    },
-  },
-})
+  require 'custom.plugins.misc',
+}, lazy_opts)
 
 -- vim: ts=2 sts=2 sw=2 et
