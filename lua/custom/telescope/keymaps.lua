@@ -15,6 +15,7 @@ vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[d]iagnostics' 
 vim.keymap.set('n', '<leader>sr', builtin.oldfiles, { desc = '[r]ecent files' })
 vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[b]uffers' })
 vim.keymap.set('n', '<leader><leader>', builtin.resume, { desc = 'Resume Telescope Search' })
+vim.keymap.set('n', '<leader>sC', builtin.commands, { desc = '[C]ommands' })
 
 vim.keymap.set('n', '<leader>sm', '<cmd>Telescope media_files<cr>', { desc = '[m]edia' })
 vim.keymap.set('n', '<leader>se', '<cmd>Telescope emoji<cr>', { desc = '[e]moji' })

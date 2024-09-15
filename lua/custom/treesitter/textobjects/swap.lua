@@ -1,9 +1,9 @@
 return {
   enable = true,
   swap_next = {
-    ['<leader>a'] = '@parameter.inner',
+    ['<leader>pi'] = '@parameter.inner',
   },
   swap_previous = {
-    ['<leader>A'] = '@parameter.inner',
+    ['<leader>Pi'] = '@parameter.inner',
   },
 }
