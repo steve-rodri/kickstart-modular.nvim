@@ -18,6 +18,7 @@ function M.setup(dap)
   for _, language in ipairs(js_based_languages) do
     dap.configurations[language] = {
       configs.launch_nodejs,
+      configs.launch_vitest,
       configs.attach_nodejs,
       configs.web_processes(),
       launch_json,

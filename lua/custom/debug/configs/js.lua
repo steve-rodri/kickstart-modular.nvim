@@ -37,6 +37,18 @@ M.launch_jest = {
   internalConsoleOptions = 'neverOpen',
 }
 
+M.launch_vitest = {
+  type = 'pwa-node',
+  request = 'launch',
+  name = 'Debug Vitest',
+  program = '${workspaceFolder}/node_modules/vitest/vitest.mjs',
+  args = { '--inspect-brk', '--threads', 'false', 'run', '${relativeFile}' },
+  cwd = vim.fn.getcwd(),
+  sourceMaps = true,
+  protocol = 'inspector',
+  console = 'integratedTerminal',
+}
+
 function M.web_processes(url)
   return {
     type = 'pwa-chrome',
