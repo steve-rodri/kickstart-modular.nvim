@@ -31,6 +31,7 @@ require('lazy').setup({
   require 'custom.plugins.lab',
   -- require 'custom.plugins.lualine',
   require 'custom.plugins.neoscroll',
+  require 'custom.plugins.nui-components',
   -- require 'custom.plugins.persistence',
   require 'custom.plugins.spectre',
   require 'custom.plugins.trouble',
