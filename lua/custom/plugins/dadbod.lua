@@ -6,6 +6,6 @@ return {
     'kristijanhusak/vim-dadbod-completion',
   },
   config = function()
-    vim.keymap.set('n', '<leader>td', '<cmd>DBUIToggle<cr>', { desc = '[T]oggle [D]atabase UI' })
+    vim.keymap.set('n', '<leader>td', '<cmd>DBUIToggle<cr>', { desc = '[d]adbod UI' })
   end,
 }

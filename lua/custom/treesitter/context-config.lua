@@ -19,7 +19,7 @@ return function()
 
   -- hi TreesitterContextLineNumberBottom gui=underline guisp=Grey
 
-  vim.keymap.set('n', '<leader>tC', '<cmd>TSContextToggle<cr>', { desc = '[T]oggle Treesitter [C]ontext' })
+  vim.keymap.set('n', '<leader>tC', '<cmd>TSContextToggle<cr>', { desc = 'Treesitter [C]ontext' })
 
   vim.keymap.set('n', '[c', function()
     require('treesitter-context').go_to_context(vim.v.count1)

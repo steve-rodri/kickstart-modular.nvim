@@ -12,6 +12,6 @@ return {
       css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
     })
 
-    vim.keymap.set('n', '<leader>tc', ':ColorizerToggle<cr>', { desc = '[T]oggle [C]olorizer' })
+    vim.keymap.set('n', '<leader>tc', ':ColorizerToggle<cr>', { desc = '[c]olorizer' })
   end,
 }
