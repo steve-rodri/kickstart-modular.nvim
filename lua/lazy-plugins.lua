@@ -27,7 +27,6 @@ require('lazy').setup({
   require 'custom.plugins.cmdline',
   require 'custom.plugins.dadbod',
   require 'custom.plugins.dashboard',
-  require 'custom.plugins.harpoon',
   require 'custom.plugins.lab',
   -- require 'custom.plugins.lualine',
   require 'custom.plugins.neoscroll',
