@@ -36,7 +36,6 @@ return {
         typescriptreact = { tsjs },
         json = { tsjs },
         markdown = function()
-          -- local formatters = table.insert(tsjs, 1, 'markdownlint')
           return { tsjs, 'mdslw' }
         end,
         yaml = function()
