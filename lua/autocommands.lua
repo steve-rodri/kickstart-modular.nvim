@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
   desc = 'Set file type to Ruby',
   group = vim.api.nvim_create_augroup('set-filetype-ruby', { clear = true }),
-  pattern = { 'Brewfile', 'Podfile' },
+  pattern = { 'Brewfile', 'Podfile', 'podspec' },
   callback = function()
     vim.cmd 'setfiletype ruby'
   end,
