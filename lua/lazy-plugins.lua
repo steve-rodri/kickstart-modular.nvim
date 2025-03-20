@@ -21,6 +21,7 @@ require('lazy').setup({
   require 'kickstart.plugins.treesitter',
   require 'kickstart.plugins.which-key',
 
+  require 'custom.plugins.avante',
   require 'custom.plugins.bufferline',
   -- require 'custom.plugins.catppuccin',
   require 'custom.plugins.colorizer',
