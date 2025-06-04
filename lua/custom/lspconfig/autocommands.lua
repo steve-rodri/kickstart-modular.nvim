@@ -7,6 +7,15 @@ M.setup = function()
       require('custom.lspconfig.keymaps').setup(event.buf)
 
       local client = vim.lsp.get_client_by_id(event.data.client_id)
+      
+      -- Add ESLint autocmd when ESLint LSP attaches
+      if client and client.name == 'eslint' then
+        vim.api.nvim_create_autocmd('BufWritePre', {
+          buffer = event.buf,
+          command = 'LspEslintFixAll',
+        })
+      end
+
       if client and client.server_capabilities.documentHighlightProvider then
         local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
 
